@@ -7,7 +7,17 @@ from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
 
 class LeNet5(nn.Module):
-
+    """
+    Implementation of LeNet-5 architecture from LeCun et al. (1989).
+    Designed for digit recognition on 32x32x1 grayscale images (e.g., MNIST).
+    Uses ReLU instead of TanH for modern performance.
+    
+    Args:
+        in_channels (int): Number of input channels (e.g., 1 for grayscale).
+        num_classes (int): Number of output classes (e.g., 10 for MNIST).
+        activation (str): Activation function ('relu' or 'tanh', default: 'relu').
+    """
+    
     def __init__(self,in_channels,num_classes):
         super(LeNet5,self).__init__()   
         self.conv1 = nn.Conv2d(in_channels=in_channels,out_channels=6,kernel_size=(5,5),stride=(1,1)) #INPUT: 32x32x1 ; OUTPUT: 6x28x28
