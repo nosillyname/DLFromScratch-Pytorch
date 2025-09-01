@@ -1,0 +1,3 @@
+*/*.ipynb
+# */*.csv
+Models/LeNet-5/lenet5.py
